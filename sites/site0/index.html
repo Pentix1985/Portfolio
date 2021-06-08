@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.open-popup').on('click', function(){
+                $('.popup-container').css('display', 'flex');
+            });
+    
+            $('.close-button').on('click', function(){
+                $('.popup-container').css('display', 'none');
+            });
+    
+            $('.send-button').on('click', function(){
+                let request = {
+                    'name': $('input[name="name"]').val(),
+                    'email': $('input[name="email"]').val()
+                };
+                $.post('api.php', request, function(response){
+                    if(response == '1') {
+                        $('input[name="name"]').val('');
+                        $('input[name="email"]').val('');
+                        $('.popup-container').css('display', 'none');
+                    } else {
+                        alert('Что-то пошло не так :(');
+                    }
+                });
+            });
+        });
+    </script>
+    <title>Полякин Антон — официальный сайт</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            font-size: 28px;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .fixed-container {
+            padding-left: 80px;
+            padding-right: 80px;
+            width: 840px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        nav a {
+            margin-right: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .light-button {
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding-top: 10px;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            display: inline-block;
+            max-width: 185px;
+        }
+        .first-block {
+            height: 500px;
+            background-image: url('img/man.png');
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 465px 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .dark-button {
+            background-color: rgb(0, 41, 226);
+            border: 0;
+            border-radius: 5px;
+            padding-top: 10px;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 160px;
+            color: white;
+        }
+        .first-block__title {
+            margin: 0 0 10px 0;
+        }
+        .first-block__text {
+            max-width: 460px;
+            margin: 0 0 20px 0;
+        }
+        .first-block__button:hover {
+            background-color: rgb(123, 147, 255);
+            cursor: pointer;
+            color: black;
+        }
+        .service-block {
+            margin-bottom: 70px;
+        }
+        .service-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .service-container > div {
+            padding-top: 120px;
+            background-position: left top;
+            background-repeat: no-repeat;
+            background-size: 100px;
+            font-size: 12px;
+        }
+
+        .service-block__title {
+            margin-bottom: 20px;
+        }
+        .service-1 {
+            background-image: url('img/1.png');
+        }
+        .service-2 {
+            background-image: url('img/2.png');
+        }
+        .service-3 {
+            background-image: url('img/3.png');
+        }
+        .service-4 {
+            background-image: url('img/4.png');
+        }
+        .portfolio {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 80px;
+        }
+        .portfolio img {
+            height: 175px;
+            margin-bottom: 10px;
+        }
+        .portfolio__content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .popup-container {
+            position: fixed;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            background-color: #000000ba;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 200px;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 16px;
+            height: 16px;
+            background-image: url('img/close.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .popup h2 {
+            margin-top: 0px;
+        }
+        .popup input {
+            display: block;
+            font-size: 20px;
+            width: 190px;
+            margin-bottom: 10px;
+        }
+        .blue {
+            background-color: rgb(76, 0, 255);
+        }
+        .blue__undersection {
+            padding: 40px 0 65px 0;
+        }
+        .blue__content span {
+            display: inline-block;
+            color: white;
+            font-size: 35px;
+            line-height: 45px;
+            margin-bottom: 70px;
+        }
+        .blue__content p {
+            max-width: 400px;
+            color: white;
+            font-size: 12px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0 50px 0;
+        }
+
+        .footer nav ul {
+            list-style-type: none;
+        }
+
+        .footer nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer nav ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .phone {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .footer__social-btn {
+            text-align: center;
+        }
+
+        .footer__social {
+            min-width: 250px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer__social img {
+            height: 15px;
+        }
+
+        .footer__btn {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-container">
+        <div class="popup">
+            <a href="#" class="close-button"></a>
+            <h2>Оставьте заявку</h2>
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="email" name="email" placeholder="Ваш e-mail">
+            <button class="light-button send-button">Отправить</button>
+        </div>
+    </div>
+    <header class="fixed-container">
+        <nav>
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Стоимость</a>
+        </nav>
+        <div>
+            <a href="tel:+79039999999">+7 903 999-99-99</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="light-button open-popup">Заказать звонок</button>
+        </div>
+    </header>
+    <section class="fixed-container first-block">
+        <h1 class="first-block__title">Полякин Антон</h1>
+        <p class="first-block__text">Frontend - разработчик и веб верстальщик.</p>
+        <button class="first-block__button dark-button open-popup">Узнать больше</button>
+    </section>
+    <section class="fixed-container service-block">
+        <h2 class="service-block__title title">Что я делаю</h2>
+        <div class="service-container">
+            <div class="service-1">
+                Вёрстка лендинг–страниц<br>
+                и сайтов любой сложности
+            </div>
+            <div class="service-2">
+                Адаптивная вёрстка под<br>
+                все браузеры и устройства
+            </div>
+            <div class="service-3">
+                Frontend–разработка<br>
+                и программирование
+            </div>
+            <div class="service-4">
+                Исправление и доработка<br>
+                существующей вёрстки
+            </div>
+        </div>
+        <button class="light-button open-popup">Узнать стоимость</button>
+    </section>
+    <section class="portfolio fixed-container">
+        <h2 class="portfolio__title title">Примеры работ</h2>
+        <div class="portfolio__content">
+            <figure>
+                <img src="img/e1.png" alt="psix">
+                <figcaption>Сайт психолога Веры Антоновой</figcaption>
+            </figure>
+            <figure>
+                <img src="img/e2.png" alt="child">
+                <figcaption>Сайт магазина детской одежды</figcaption>
+            </figure>
+            <figure>
+                <img src="img/e3.png" alt="fish">
+                <figcaption>Сайт магазина "Рыболов"</figcaption>
+            </figure>
+        </div>
+        <button class="light-button portfolio__button open-popup">Заказать проект</button>
+    </section>
+    <section class="blue">
+        <section class="blue__undersection fixed-container">
+            <div class="blue__content">
+                <span>Адаптивная верстка под все<br> устройства и браузеры<br> от 1000 Р всего за 4 часа.*</span>
+                <p>* Срок и стоимость могут отличаться от заявленых и рассчитываются индивидуально, в зависимости от сложностей задач</p>
+            </div>
+        </section>
+    </section>
+    <footer class="footer fixed-container">
+        <nav class="footer__nav">
+            <ul>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Портфолио</a></li>
+                <li><a href="#">Стоимость</a></li>
+            </ul>
+        </nav>
+        <div class="footer__contact">
+            <a href="tel:+79039999999" class="phone">+7 903 999-99-99</a>
+            <p class="footer__email">kgb85@mail.ru</p>
+        </div>
+        <div class="footer__social-btn">
+            <button class="footer__btn light-button open-popup">Заказать звонок</button>
+            <div class="footer__social"><img src="img/fb.png" alt="fb"><img src="img/vk.png" alt="vk"><img src="img/you.png" alt="youtube"><img src="img/telegram.png" alt="telegram"><img src="img/inst.png" alt="inst"></div>
+        </div>
+    </footer>
+</body>
+</html>
