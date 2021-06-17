@@ -1,0 +1,357 @@
+@import url("../css/null.scss");
+@font-face {
+  font-family: 'Calibri-Regular';
+  src: local("Calibri Regular"), local("Calibri-Regular"), url("../fonts/Calibri/Calibri.woff2") format("woff2"), url("../fonts/Calibri/Calibri.woff") format("woff"), url("../fonts/Calibri/Calibri.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Calibri-Bold';
+  src: local("Calibri Bold"), local("Calibri-Bold"), url("../fonts/Calibri-Bold/Calibri-Bold.woff2") format("woff2"), url("../fonts/Calibri-Bold/Calibri-Bold.woff") format("woff"), url("../fonts/Calibri-Bold/Calibri-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'San Francisco(SF UI)';
+  src: local("San Francisco(SF UI) Display Medium"), local("San-Francisco(SF-UI)-Display-Medium"), url("../fonts/SFUIDisplay-Medium/SFUIDisplay-Medium.woff2") format("woff2"), url("../fonts/SFUIDisplay-Medium/SFUIDisplay-Medium.woff") format("woff"), url("../fonts/SFUIDisplay-Medium/SFUIDisplay-Medium.ttf") format("truetype");
+}
+
+.container {
+  max-width: 1920px;
+  padding-left: 335px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 17px;
+  left: 80px;
+  z-index: -1;
+}
+
+.title {
+  font-family: "Calibri-Bold", "Arial", sans-serif;
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #141419;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+.title span {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(0.22em, transparent), color-stop(0.22em, #fb973b), color-stop(0.42em, #fb973b), color-stop(0.42em, transparent));
+  background-image: linear-gradient(0, transparent 0.22em, #fb973b 0.22em, #fb973b 0.42em, transparent 0.42em);
+  word-wrap: break-word;
+}
+
+.subtitle {
+  font-family: "Calibri-Regular", "Arial", sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+  color: #616161;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+.orange-text {
+  font-weight: 700;
+  color: #fb973b;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 28px 334px 0 0;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 768px;
+  margin: 0 117px;
+}
+
+header nav a {
+  margin-right: 50px;
+  font-family: "Calibri-Regular", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 29px;
+  font-weight: 400;
+  color: #616161;
+  border-bottom: 2px solid transparent;
+}
+
+header nav a:last-child {
+  margin-right: 0;
+}
+
+header nav a:hover {
+  border-bottom: 2px solid #fb973b;
+}
+
+header .header__phone {
+  font-family: "Calibri-Bold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #141419;
+}
+
+.best-light {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 84px 57px 65px 0;
+  min-width: 1585px;
+  position: relative;
+}
+
+.best-light .best-light__title {
+  max-width: 685px;
+  margin-bottom: 17px;
+}
+
+.best-light .best-light__subtitle {
+  max-width: 324px;
+  margin-bottom: 36px;
+}
+
+.best-light::after {
+  content: '';
+  position: absolute;
+  width: 982px;
+  height: 584px;
+  background-image: url("../img/korofka-lampi.png");
+  background-size: 982px;
+  background-repeat: no-repeat;
+  background-position-x: right 57px;
+  background-position-y: top 25px;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.form {
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+
+.form .form-tel {
+  width: 196px;
+  height: 57px;
+  border: 1px solid #e1e1e1;
+  padding: 23px 32px 20px 32px;
+}
+
+.form .form-btn {
+  width: 195px;
+  height: 57px;
+  background-color: #fb973b;
+  font-family: "San Francisco(SF UI)", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 31px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.form input::-webkit-input-placeholder {
+  font-family: "San Francisco(SF UI)", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #616161;
+}
+
+.form input::-moz-placeholder {
+  font-family: "San Francisco(SF UI)", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #616161;
+}
+
+.form input:-moz-placeholder {
+  font-family: "San Francisco(SF UI)", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #616161;
+}
+
+.form input:-ms-input-placeholder {
+  font-family: "San Francisco(SF UI)", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #616161;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 142px 528px 141px 202px;
+}
+
+.about .about__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.about .about__title span {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.about .about__subtitle {
+  text-align: center;
+  padding: 10px 153px 0 153px;
+  min-width: 827px;
+  margin-bottom: 45px;
+}
+
+.about .about-decription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about .about-decription .about__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 0 36px;
+  text-align: center;
+}
+
+.about .about-decription .about__text .about__text-num {
+  width: 21px;
+  height: 21px;
+  border: 1px solid #fb973b;
+  color: #fb973b;
+  line-height: 18px;
+  font-size: 14px;
+  border-radius: 11px;
+  text-align: center;
+  position: relative;
+  margin: 34px 0 27px 0;
+}
+
+.about .about-decription .about__text .about__text-num::before {
+  content: '';
+  width: 1px;
+  height: 21px;
+  position: absolute;
+  background-color: #fb973b;
+  display: inline-block;
+  top: -21px;
+  left: 9.5px;
+}
+
+.about .about-decription .about__text .about__text-num::after {
+  content: '';
+  width: 1px;
+  height: 21px;
+  position: absolute;
+  background-color: #fb973b;
+  display: inline-block;
+  top: 20px;
+  left: 9.5px;
+}
+
+.about .about-decription .about__text .about__text-num:first-child {
+  margin: 0 0 27px 0;
+}
+
+.about .about-decription .about__text .about__text-num:first-child::before {
+  display: none;
+}
+
+.about .about-decription .about__text .about__content {
+  font-family: "Calibri-Regular", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  color: #141419;
+  width: 405px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 347px 0 0;
+  min-width: 1585px;
+}
+
+footer .partners {
+  min-width: 430px;
+  margin-right: 128px;
+}
+
+footer .partners span {
+  min-width: 430px;
+}
+
+footer .partners__subtitle {
+  max-width: 250px;
+}
+
+footer .partners-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 400px;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  min-width: 680px;
+}
+
+footer .partners-logo img {
+  width: 241px;
+  margin-right: 12px;
+}
+
+footer .partners-logo > img:nth-child(2) {
+  width: 265px;
+  margin-right: 0px;
+}
+/*# sourceMappingURL=style.css.map */
