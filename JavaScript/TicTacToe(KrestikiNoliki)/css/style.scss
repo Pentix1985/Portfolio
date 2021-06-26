@@ -1,0 +1,46 @@
+@import url('../css/mynullcss.scss');
+
+.container {
+    padding: 100px 0 0 0;
+    max-width: 1920px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container-wrapper {
+    display: inline-block;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 15px;
+    justify-content: center;
+    font-size: 100px;
+}
+
+.square {
+    background-color: coral;
+    &:hover {
+        border: 1px solid black;
+    }
+}
+
+.start-btn {
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    display: inherit;
+}
+
+.cur-player {
+    display: none;
+    position: absolute;
+    background-color: green;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 45px;
+}
