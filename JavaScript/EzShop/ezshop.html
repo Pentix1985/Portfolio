@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="https://kit.fontawesome.com/3f347351bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>ezShop</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="cart">Корзина<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+            <div class="basket basket-visibile">
+                <div class="basket__total-price">Итого:<span class="basket__total-price-number"></span></div>
+                <h2 class="basket__advertisement">Нет товаров в корзине.</h2>
+            </div>
+        </header>
+        <main>
+            <section class="products">
+                
+            </section>
+        </main>
+    </div>
+
+    <!-- Templates -->
+    <template id="itemCard">
+        <div class="basket__item">
+            <p class="basket__product-name"></p>
+            <p class="basket__product-price">Цена: р.</p>
+            <div class="basket__product-count">
+                <button class="basket__plus-btn basket-btn">+</button>
+                <p class="basket__count">Количество: <span class="basket__count-number"></span></p>
+                <button class="basket__minus-btn basket-btn">-</button>
+            </div>
+            <button class="basket__remove-btn">Удалить товар</button>    
+        </div>
+    </template>
+    <!-- EndTemplates -->
+
+    <script src="scripts/displayitems.js"></script>
+    <script src="scripts/itembasket.js"></script>
+    <script src="scripts/scipts.js"></script>
+</body>
+</html>
